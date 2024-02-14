@@ -1,0 +1,87 @@
+<div style="overflow: auto;">
+    <div>
+        <h2   class="search">Dealrships</h2>
+    </div>
+    <div class="row mt-4">
+        <div >
+          <input     class="search" type="search" placeholder="Search by name"
+           aria-label="Search" [(ngModel)]="searchText" (ngModelChange)="getDealers()">
+        </div>
+        <div class="btn">
+                <button  mat-button class="add-dealer" (click)="openAddDealerDialog()">
+               <mat-icon>add</mat-icon>   Add Dealer
+                </button>
+        </div>
+    </div>
+      <!-- Display table -->
+  <div class="table-container">
+    <mat-table
+      [dataSource]= "dataSource"
+      matSort
+    > 
+    <ng-container matColumnDef="Sr">
+        <mat-header-cell mat-sort-header *matHeaderCellDef
+          >Sr. no</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row; index as index"> {{ index + 1  }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <mat-header-cell mat-sort-header *matHeaderCellDef 
+          > Name</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row"> {{ row.name }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="length">
+        <mat-header-cell mat-sort-header *matHeaderCellDef
+          >EventName</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row" class="url">
+          {{ row.cars?.length }}</mat-cell
+        >
+      </ng-container>
+      <ng-container matColumnDef="totalBudget">
+        <mat-header-cell mat-sort-header *matHeaderCellDef
+          >Total Budget</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row"> 
+        {{ row.totalBudget }}
+        </mat-cell>
+         
+      </ng-container>
+
+      <ng-container matColumnDef="remainingBudget">
+        <mat-header-cell mat-sort-header *matHeaderCellDef
+          >Remaining Budget</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row"> {{ row.remainingBudget }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="button">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>
+          Action
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+<button mat-button [routerLink]="['/dealership',row.id]"  class="view-btn"> 
+    <mat-icon>visibility</mat-icon> View
+</button> 
+&nbsp;
+<button mat-button class="edit-btn"  (click)="editDialog(row)"> 
+  <mat-icon>edit</mat-icon> Edit
+</button> &nbsp;
+<button mat-button class="del-btn custom-text-color" (click)="deleteDialog(row)"> 
+  <mat-icon>delete</mat-icon> Delete
+</button>
+</mat-cell>
+      </ng-container>
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+    <mat-paginator #paginatior
+      [pageSizeOptions]="[10, 20, 40, 50, 100]"
+      [pageSize]="10"
+    ></mat-paginator>
+  </div>
+  <!-- end -->
+
+</div> 

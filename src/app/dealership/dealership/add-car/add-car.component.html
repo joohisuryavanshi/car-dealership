@@ -1,0 +1,97 @@
+<div class="container">
+
+  <div style="text-align: right;">
+    <mat-icon _ngcontent-pfo-c177="" role="img" style="text-align: right;" (click)="onCloseClick()"
+        class="mat-icon notranslate secondary-text curser-pointer material-icons mat-icon-no-color dialogClose ng-star-inserted"
+        aria-hidden="true" style="color:rgb(102, 102, 102);">close</mat-icon>
+  </div>
+  
+    <div class="header">
+      <h2 style="text-align: center">Add Dealers</h2>
+      <h3 style="text-align: center">All Firls Are Mandentery</h3>
+    </div>
+    <div id="addDialog-module">
+      <form fxLayout="column" name="addCars" [formGroup]= "addCars" novalidate>
+        <div class="form-container flex-column" style="font-size: 14px" fxLayout="column">
+          <div class="input-with-label">
+            <span class="label-text">Brand</span>
+          <mat-form-field  appearance="outline" fxFlex="100" floatLabel="always">
+            <mat-label>Brand</mat-label>
+            <input
+              matInput
+              placeholder="brand"
+              required=""
+              name="brand"
+              formControlName="brand"
+            />
+          </mat-form-field>
+  </div>
+  <div class="input-with-label">
+    <span class="label-text">Model</span>
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label>Model </mat-label>
+  
+            <input
+              matInput
+              placeholder="model"
+              required=""
+              name="model"
+              formControlName="model"
+            />
+          </mat-form-field>
+          </div>
+          <div class="input-with-label">
+            <span class="label-text">Color</span>
+          <mat-form-field appearance="outline" fxFlex="100" class="px-8 mb-o">
+            <mat-label>Color</mat-label>
+            <input
+              matInput
+              placeholder="color"
+              required=""
+              name="color"
+              formControlName="color"
+            />
+          </mat-form-field>
+          </div>
+          <div class="input-with-label">
+            <span class="label-text">Price</span>
+
+          <mat-form-field appearance="outline" fxFlex="100" class="px-8 mb-o">
+            <mat-label>Price</mat-label>
+            <input
+              matInput
+              placeholder="price"
+              required=""
+              name="price"
+              formControlName="price"
+            />
+          </mat-form-field>
+          </div>
+        <div fxLayoutAlign="center center"  class="btn">
+          <button
+            mat-raised-button
+            matStepperNext
+            type="button"
+            [disabled]="addCars.invalid"
+            class="btn1"
+            aria-label="SUBMIT"
+            (click)="submitForm()"
+          >
+          Save
+          </button>
+          <button
+            mat-raised-button
+            matStepperNext
+            type="button"
+            class="btn2"
+            aria-label="CLOSE"
+            (click)="onCloseClick()"
+          >
+            Close
+          </button>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

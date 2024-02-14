@@ -1,0 +1,87 @@
+<div *ngIf="caresList" style="overflow: auto">
+  <div class="row my-4">
+    <div class="col">
+      <h2 class="search">Dealrships : {{ caresList.name }}</h2>
+    </div>
+
+    <div>
+      <div>
+        <input
+          class="search"
+          type="search"
+          placeholder="Search by brand"
+          aria-label="Search"
+          (keyup)="searchCars($event)"
+        />
+      </div>
+      <div class="btn">
+        <button mat-button class="back-btn" routerLink="/">Back</button>
+        <button mat-button class="add-car-btn" (click)="openAddCarDialog()">
+          <mat-icon>add</mat-icon> Add Car
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- view  cars table -->
+  <div class="table-container">
+    <mat-table
+      [dataSource]="dataSource"
+      matSort
+      class="table-hor-scroll table-width"
+    >
+      <ng-container matColumnDef="Sr">
+        <mat-header-cell mat-sort-header *matHeaderCellDef
+          >Sr. no</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row; index as index">
+          {{ index + 1 }}</mat-cell
+        >
+      </ng-container>
+      <ng-container matColumnDef="brand">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>
+          Brand</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row"> {{ row.brand }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="model">
+        <mat-header-cell mat-sort-header *matHeaderCellDef
+          >Model</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row" class="url"> {{ row.model }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="color">
+        <mat-header-cell mat-sort-header *matHeaderCellDef
+          >Color</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row">
+          {{ row.color }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <mat-header-cell mat-sort-header *matHeaderCellDef
+          >Price</mat-header-cell
+        >
+        <mat-cell *matCellDef="let row"> {{ row.price }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="button">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>
+          Action
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-button class="edit-btn" (click)="editDialog(row)">
+            <mat-icon>edit</mat-icon> Edit
+          </button>
+          &nbsp;
+          <button mat-button class="del-btn" (click)="deleteDialog(row)">
+            <mat-icon>delete</mat-icon> Delete
+          </button>
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </div>
+  <!-- end cars table -->
+</div>

@@ -1,0 +1,130 @@
+<div class="container">
+  <div style="text-align: right">
+    <mat-icon
+      _ngcontent-pfo-c177=""
+      role="img"
+      style="text-align: right"
+      (click)="onCloseClick()"
+      class="mat-icon notranslate secondary-text curser-pointer material-icons mat-icon-no-color dialogClose ng-star-inserted"
+      aria-hidden="true"
+      style="color: rgb(102, 102, 102)"
+      >close</mat-icon
+    >
+  </div>
+
+  <div class="header">
+    <h3 style="text-align: center">Edit Dealers</h3>
+    <h5 style="text-align: center">All Firls Are Mandentery</h5>
+  </div>
+  <div id="addDialog-module">
+    <form fxLayout="column" name="addDealer" [formGroup]="addDealer" novalidate>
+      <div
+        class="form-container flex-column"
+        style="font-size: 14px"
+        fxLayout="column"
+      >
+        <div class="input-with-label">
+          <span class="label-text">Dealer's Name</span>
+          <mat-form-field appearance="outline" fxFlex="100">
+            <mat-label> </mat-label>
+            <input
+              matInput
+              placeholder="Dealer's Name "
+              required=""
+              name="name"
+              formControlName="name"
+            />
+          </mat-form-field>
+        </div>
+        <div class="input-with-label">
+          <span class="label-text">Location</span>
+          <div fxLayout="column">
+            <mat-form-field appearance="outline" fxFlex="100">
+              <input
+                matInput
+                placeholder="longitude"
+                required=""
+                name="longitude"
+                formControlName="longitude"
+              />
+            </mat-form-field>
+            <mat-form-field appearance="outline" fxFlex="100">
+              <input
+                matInput
+                placeholder="latitude"
+                required=""
+                name="latitude"
+                formControlName="latitude"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="input-with-label">
+          <span class="label-text">Total Budget</span>
+
+          <mat-form-field appearance="outline" fxFlex="100" class="px-8 mb-o">
+            <mat-label></mat-label>
+            <input
+              matInput
+              placeholder="$0.00"
+              required=""
+              name="totalBudget"
+              formControlName="totalBudget"
+            />
+          </mat-form-field>
+        </div>
+        <div class="input-with-label">
+          <span class="label-text">First Name </span>
+
+          <mat-form-field appearance="outline" fxFlex="100" class="px-8 mb-o">
+            <mat-label></mat-label>
+            <input
+              matInput
+              placeholder="firstName"
+              required=""
+              name="firstName"
+              formControlName="firstName"
+            />
+          </mat-form-field>
+        </div>
+        <div class="input-with-label">
+          <span class="label-text">Last Name </span>
+
+          <mat-form-field appearance="outline" fxFlex="100" class="px-8 mb-o">
+            <mat-label></mat-label>
+            <input
+              matInput
+              placeholder="lastName"
+              required=""
+              name="lastName"
+              formControlName="lastName"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="btn" fxLayoutAlign="center center">
+        <button
+          mat-raised-button
+          matStepperNext
+          type="button"
+          [disabled]="addDealer.invalid"
+          class="btn1"
+          aria-label="SUBMIT"
+          (click)="submitForm()"
+        >
+          Update
+        </button>
+        <button
+          mat-raised-button
+          matStepperNext
+          type="button"
+          class="btn2"
+          aria-label="CLOSE"
+          (click)="onCloseClick()"
+        >
+          Close
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

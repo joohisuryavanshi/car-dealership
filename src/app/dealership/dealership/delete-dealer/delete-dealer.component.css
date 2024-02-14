@@ -1,0 +1,13 @@
+.container{
+    overflow: auto;
+}
+
+.button-container {
+    text-align: center; 
+    display: flex; 
+    justify-content: space-around; 
+  }
+  .yes-btn{
+    background-color:  #A0655F !important;
+    color: #fff !important;
+  }

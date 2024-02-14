@@ -1,0 +1,11 @@
+.container{
+    overflow: hidden;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+}
+.btn1{
+    color: #fff !important;
+    background-color: #99625c;
+  }

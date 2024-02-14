@@ -1,0 +1,40 @@
+.btn1{
+    color: #fff !important;
+    background-color: #99625c;
+  }
+  .mat-raised-button.mat-button-disabled.mat-button-disabled{
+    background-color: #c29c99;
+    color: #fff !important;
+  
+  }
+  .btn2{
+    color: #000000;
+    min-width: 88px;
+    background-color: rgba(240, 241, 247, 0.062);
+  }
+
+  .title{
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+  }
+  #addDialog-module{
+    padding: 20px;
+
+  }
+
+  .input-with-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px; 
+  }
+  
+  .label-text {
+    margin-right: 16px; 
+    min-width: 120px; 
+    font-size: 14px; 
+  }
+  .btn{
+    display: flex;
+    gap: 10px;
+  }
